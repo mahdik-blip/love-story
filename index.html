@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head> 
+<title>SWEETIEE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  transition: background 0.6s ease;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.card {
+  width: 85%;
+  max-width: 340px;
+  text-align: center;
+  color: white;
+}
+
+#text {
+  font-size: 24px;
+  line-height: 1.6;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+
+
+.hide {
+  opacity: 0;
+  transform: translateY(30px);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div id="text">❤️🤭 أهلا سارة
+  <br> swipe> </div>
+</div>
+
+<script>
+const messages = [
+  "في البداية… لم أكن أفهم شيئاً",
+  "لكن الوقت كشف لي أمور كثيرة",
+  "بدأت ألاحظ تفاصيل صغيرة",
+  "كل كلمة منك كانت تعني لي الكثير",
+  "ثم تغيّر كل شيء داخلي",
+  "وصرت أفكر بك أكثر مما يجب",
+  "وفي النهاية…",
+];
+
+const backgrounds = [
+  "#F4C9D6",
+  "#7A4854",
+  "#F2BDCD",
+  "#A599C9",
+  "#CF7486",
+  "#F8BBD0",
+  "#8E4A49",
+];
+
+const colors = [
+  "#3E2723",
+  "#F4EDDA",
+  "#563C5C",
+  "#F8F4FF",
+  "#FFE6ED",
+  "#FFF8F0",
+  "#F4DCD6",
+];
+
+let i = 0;
+
+const text = document.getElementById("text");
+
+function showSlide() {
+
+  text.classList.add("hide");
+
+  setTimeout(() => {
+
+    if (i >= messages.length) {
+      text.innerText = "❤️ انا أحبك";
+          document.body.style.background = "#FDE2E4";
+      text.style.color = "#A47149";
+      text.classList.remove("hide");
+      return;
+    }
+
+    text.innerText = messages[i];
+    document.body.style.background = backgrounds[i];
+    text.style.color = colors[i];
+
+    i++;
+
+    text.classList.remove("hide");
+
+  }, 300);
+}
+
+
+let startX = 0;
+
+document.body.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+document.body.addEventListener("touchend", (e) => {
+  let endX = e.changedTouches[0].clientX;
+
+  if (Math.abs(startX - endX) > 50) {
+    showSlide();
+  }
+});
+</script>
+
+</body>
+</html>
