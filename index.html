@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-  background: #6D071A;
+  background: white;
   padding: 25px;
   border-radius: 15px;
   text-align: center;
@@ -51,17 +51,17 @@ button:hover {
   background: #ff5c7a;
 }
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
-  <img id="image" src="4B3C189A-6315-4650-8D5E-CA078E7D0488.png">
+  <img src="https://via.placeholder.com/300x150" alt="image">
 
   <form onsubmit="return verifier(event)">
     <input type="text" id="nom" placeholder="Nom" required>
     <input type="password" id="mdp" placeholder="Mot de passe" required>
-    <input type="password" id="confirm" placeholder="Confirmer mot de passe" required>
 
     <button type="submit">Connexion</button>
   </form>
@@ -73,13 +73,6 @@ function verifier(e) {
 
   let nom = document.getElementById("nom").value;
   let mdp = document.getElementById("mdp").value;
-  let confirm = document.getElementById("confirm").value;
-
-  // تحقق من التطابق
-  if (mdp !== confirm) {
-    alert("Les mots de passe ne sont pas identiques !");
-    return false;
-  }
 
   // حساب تجريبي
   if (nom === "med" && mdp === "123") {
