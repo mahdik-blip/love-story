@@ -1,89 +1,30 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Connexion</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: linear-gradient(to right, #ff9aa2, #ffc3a0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  width: 320px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-input {
-  width: 90%;
-  padding: 10px;
-  margin: 8px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  background: #ff758c;
-  color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #ff5c7a;
-}
-</style>
-
+  <meta charset="UTF-8">
+  <title>Mediverse</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
-  <img id="imge" src="4B3C189A-6315-4650-8D5E-CA078E7D0488.png">
+  <div class="container">
 
-  <form onsubmit="return verifier(event)">
-    <input type="text" id="nom" placeholder="Nom" required>
-    <input type="password" id="mdp" placeholder="Mot de passe" required>
+   
+    <div class="left">
+      <h1>Welcome to Mediverse 👨‍⚕️</h1>
+      <p>
+        Your platform for medical learning, QCM practice and courses.
+      </p>
 
-    <button type="submit">Connexion</button>
-  </form>
-</div>
+      <a href="dashboard.html" class="btn">ابدأ الآن</a>
+    </div>
+    
+    <div class="right">
+      <img src="https://images.unsplash.com/photo-1581091012184-7e0cdfbb6793" alt="medical study">
+    </div>
 
-<script>
-function verifier(e) {
-  e.preventDefault();
-
-  let nom = document.getElementById("nom").value;
-  let mdp = document.getElementById("mdp").value;
-
-  // حساب تجريبي
-  if (nom === "med" && mdp === "123") {
-    window.location.href = "page2.html";
-  } else {
-    alert("Nom ou mot de passe incorrect !");
-  }
-
-  return false;
-}
-</script>
+  </div>
 
 </body>
 </html>
