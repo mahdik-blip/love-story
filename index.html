@@ -2,45 +2,104 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mediverse</title>
+<title>Neumorphic Button</title>
 
 <style>
-body{
-  margin:0;
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  background:linear-gradient(120deg,#6a11cb,#2575fc);
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* هنا تختار اللون الثابت */
+  background: #dfe6e9;
+
+  font-family: Arial, sans-serif;
 }
 
-/* image */
-img{
-  width:180px;
+.image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* button */
-button{
-  padding:15px 40px;
-  border:none;
-  border-radius:30px;
-  font-size:18px;
-  cursor:pointer;
-  background:linear-gradient(45deg,#ff6a00,#ee0979);
-  color:white;
+ 
+
+/* الزر (بدون أي تغيير) */
+.neo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 50px;
+  background: #e6e6e6;
+
+  box-shadow: 
+    -8px -8px 15px rgba(255,255,255,0.9),
+     8px 8px 15px rgba(0,0,0,0.15);
+}
+
+.text {
+  padding: 15px 25px;
+  border-radius: 40px;
+  background: #e6e6e6;
+
+  box-shadow: 
+    -4px -4px 8px rgba(255,255,255,0.9),
+     4px 4px 8px rgba(0,0,0,0.15);
+
+  font-size: 20px;
+}
+
+.arrow-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e6e6e6;
+
+  box-shadow: 
+    -4px -4px 8px rgba(255,255,255,0.9),
+     4px 4px 8px rgba(0,0,0,0.15);
+
+  font-size: 20px;
+}
+
+.arrow-btn:active {
+  box-shadow: 
+    inset -4px -4px 8px rgba(255,255,255,0.7),
+    inset 4px 4px 8px rgba(0,0,0,0.2);
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png">
+<!-- الشعار -->
+<img class="logo" src="logo.png">
 
-<button onclick="go()">ابدأ</button>
+<!-- الزر -->
+<div class="neo-container">
+  <div class="text">Get Started</div>
+
+  <button class="arrow-btn" onclick="goNext()">
+    →
+  </button>
+</div>
 
 <script>
-function go(){
+function goNext() {
   window.location.href = "page2.html";
 }
 </script>
